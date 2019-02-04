@@ -6,6 +6,7 @@ public class Attendee {
     private String email;
     private String plannedArrivalDate;
     private String specialRequests;
+    private boolean vip;
 
     public Attendee(String name, String address, String email, String plannedArrivalDate, String specialRequests) {
         this.name = name;
@@ -13,6 +14,7 @@ public class Attendee {
         this.email = email;
         this.plannedArrivalDate = plannedArrivalDate;
         this.specialRequests = specialRequests;
+        this.vip = false;
     }
 
     public String getName() {
@@ -53,5 +55,13 @@ public class Attendee {
 
     public void setSpecialRequests(String specialRequests) {
         this.specialRequests = specialRequests;
+    }
+
+    public boolean isVip() {
+        return vip;
+    }
+
+    public void setVip(boolean vip) {
+        this.vip = vip;
     }
 }
