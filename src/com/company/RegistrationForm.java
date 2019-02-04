@@ -14,10 +14,11 @@ public class RegistrationForm {
                 "2 - Admin \n" +
                 "3 - Exit");
 
-        int usrChoice = input.nextInt();
+        String usrChoice = input.nextLine();
 
         switch (usrChoice){
-            case 1:
+            case "1":
+
                 System.out.println("Please enter name: \n");
                 String name = input.nextLine();
                 System.out.println("Please enter your address: \n");
@@ -30,12 +31,12 @@ public class RegistrationForm {
                 String specialRequests = input.nextLine();
                 Attendee tempAttendee = new Attendee(name, address, email, plannedArrivalDate,specialRequests);
                 attendeeList.add(tempAttendee);
-                break;
 
-
-            case 2:
+                System.out.println(attendeeList);
                 break;
-            case 3:
+            case "2":
+                break;
+            case "3":
                 break;
             default:
                 break;

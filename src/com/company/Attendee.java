@@ -20,6 +20,18 @@ public class Attendee {
         this.vip = false;
     }
 
+    @Override
+    public String toString() {
+        return "Attendee{" +
+                "name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", email='" + email + '\'' +
+                ", plannedArrivalDate='" + plannedArrivalDate + '\'' +
+                ", specialRequests='" + specialRequests + '\'' +
+                ", vip=" + vip +
+                '}';
+    }
+
     public String getName() {
         return name;
     }
