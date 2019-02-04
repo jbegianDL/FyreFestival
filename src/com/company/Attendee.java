@@ -32,6 +32,7 @@ public class Attendee {
                 ", plannedArrivalDate='" + plannedArrivalDate + '\'' +
                 ", specialRequests='" + specialRequests + '\'' +
                 ", vip=" + vip +
+                ", idNumber = " + idNumber +
                 '}';
     }
 

@@ -1,7 +1,7 @@
 package com.company;
 
 public class AttendeeID {
-    private int id = 1;
+    private int id = 0;
 
     public int getId() {
         return id;
