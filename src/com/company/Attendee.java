@@ -9,6 +9,7 @@ public class Attendee {
     private String email;
     private String plannedArrivalDate;
     private String specialRequests;
+    private int idNumber;
     private boolean vip;
 
     public Attendee(String name, String address, String email, String plannedArrivalDate, String specialRequests) {
@@ -17,8 +18,10 @@ public class Attendee {
         this.email = email;
         this.plannedArrivalDate = plannedArrivalDate;
         this.specialRequests = specialRequests;
+        this.idNumber = getIdNumber();
         this.vip = false;
     }
+
 
     @Override
     public String toString() {
@@ -70,6 +73,14 @@ public class Attendee {
 
     public void setSpecialRequests(String specialRequests) {
         this.specialRequests = specialRequests;
+    }
+
+    public int getIdNumber() {
+        return idNumber;
+    }
+
+    public void setIdNumber(int idNumber) {
+        this.idNumber = idNumber;
     }
 
     public boolean isVip() {

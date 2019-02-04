@@ -9,6 +9,8 @@ public class RegistrationForm {
 
     public void menuPrompt(){
         Scanner input = new Scanner(System.in);
+        AttendeeID tempId = new AttendeeID();
+
         System.out.println("Please enter a number \n" +
                 "1 - Attendee \n" +
                 "2 - Admin \n" +
@@ -29,7 +31,8 @@ public class RegistrationForm {
                 String plannedArrivalDate = input.nextLine();
                 System.out.println("Please enter any special requests: \n");
                 String specialRequests = input.nextLine();
-                Attendee tempAttendee = new Attendee(name, address, email, plannedArrivalDate,specialRequests);
+                Attendee tempAttendee = new Attendee(name, address, email, plannedArrivalDate, specialRequests);
+                tempAttendee.setIdNumber(tempId.incrementID());
                 attendeeList.add(tempAttendee);
 
                 System.out.println(attendeeList);
@@ -45,4 +48,6 @@ public class RegistrationForm {
 
 
     }
+
+
 }
