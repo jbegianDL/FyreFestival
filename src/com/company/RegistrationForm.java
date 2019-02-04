@@ -10,6 +10,7 @@ public class RegistrationForm {
     public void menuPrompt(){
         Scanner input = new Scanner(System.in);
         AttendeeID tempId = new AttendeeID();
+        Admin tempAdmin = new Admin();
         boolean repeat = true;
 
         do{
@@ -40,6 +41,7 @@ public class RegistrationForm {
                     System.out.println(attendeeList.get(0).getIdNumber());
                     break;
                 case "2":
+                    tempAdmin.adminLogin();
                     break;
                 case "3":
                     System.out.println("Goodbye");
@@ -49,11 +51,10 @@ public class RegistrationForm {
                     break;
             }
         }while(repeat);
+    }
 
-
-
-
-
+    public List<Attendee> getAttendeeList() {
+        return attendeeList;
     }
 
 
