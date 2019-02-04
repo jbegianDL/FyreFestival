@@ -1,8 +1,11 @@
 package com.company;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class RegistrationForm {
 
+    private List<Attendee> attendeeList = new ArrayList();
 
     public void menuPrompt(){
         Scanner input = new Scanner(System.in);
@@ -15,7 +18,21 @@ public class RegistrationForm {
 
         switch (usrChoice){
             case 1:
+                System.out.println("Please enter name: \n");
+                String name = input.nextLine();
+                System.out.println("Please enter your address: \n");
+                String address = input.nextLine();
+                System.out.println("Please enter your email: \n");
+                String email = input.nextLine();
+                System.out.println("Please enter your planned arrival date: (Example: MM/DD/YYYY) \n");
+                String plannedArrivalDate = input.nextLine();
+                System.out.println("Please enter any special requests: \n");
+                String specialRequests = input.nextLine();
+                Attendee tempAttendee = new Attendee(name, address, email, plannedArrivalDate,specialRequests);
+                attendeeList.add(tempAttendee);
                 break;
+
+
             case 2:
                 break;
             case 3:
