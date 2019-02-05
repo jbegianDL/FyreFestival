@@ -1,6 +1,4 @@
 package com.company;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class RegistrationForm {
@@ -10,8 +8,6 @@ public class RegistrationForm {
 
     public void menuPrompt(){
         Scanner input = new Scanner(System.in);
-
-        Admin tempAdmin = new Admin();
         boolean repeat = true;
 
         do{
@@ -27,7 +23,7 @@ public class RegistrationForm {
                     tempList.addAttendee();
                     break;
                 case "2":
-                    tempAdmin.adminLogin();
+                    tempList.adminLogin();
                     break;
                 case "3":
                     System.out.println("Goodbye");
