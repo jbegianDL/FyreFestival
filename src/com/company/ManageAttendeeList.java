@@ -7,6 +7,7 @@ public class ManageAttendeeList {
     private List<Attendee> attendeeList = new ArrayList();
     private Scanner input = new Scanner(System.in);
     private String adminPass = "passwOrd";
+    private AttendeeID attendeeID = new AttendeeID();
 
 
     public void addAttendee(){
@@ -21,9 +22,8 @@ public class ManageAttendeeList {
         System.out.println("Please enter any special requests: \n");
         String specialRequests = input.nextLine();
         Attendee tempAttendee = new Attendee(name, address, email, plannedArrivalDate, specialRequests);
-        tempAttendee.setIdNumber(tempAttendee.getIdNumber() + 1);
+        tempAttendee.setIdNumber(attendeeID.incrementID());
         attendeeList.add(tempAttendee);
-
         System.out.println(attendeeList);
     }
 
