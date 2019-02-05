@@ -32,11 +32,15 @@ public class ManageAttendeeList {
         String usrInput = input.nextLine();
         if(usrInput.equals(adminPass)){
             System.out.println("Enter a number of what you'd like to do: \n" +
-                    "1 - Search by ID Number");
+                    "1 - Search by ID Number \n " +
+                    "2 - Remove by ID Number");
             usrInput = input.nextLine();
             switch (usrInput){
                 case "1":
                    searchByAccountNumber();
+                    break;
+                case "2":
+                    removeByAccountNumber();
                     break;
             }
         }else{
@@ -57,8 +61,28 @@ public class ManageAttendeeList {
                 System.out.println("Nope...");
             }
         }
+    }
 
-        System.out.println("finished");
+    public void printNameAndID() {
+        for(Attendee i : attendeeList) {
+            System.out.println(i.getName() + " " + i.getIdNumber());
+        }
+    }
+
+    public void removeByAccountNumber() {
+        printNameAndID();
+        System.out.println("Please enter the ID of the person you would like to delete: ");
+        int usrInput = input.nextInt();
+        for(int i = 0; i < attendeeList.size(); i++){
+            if(attendeeList.get(i).getIdNumber() == usrInput){
+                System.out.println("You have removed " + attendeeList.get(i).getName());
+                attendeeList.remove(attendeeList.get(i));
+                break;
+            }else{
+                System.out.println("Id is not found");
+            }
+        }
+            printNameAndID();
     }
 
 }
