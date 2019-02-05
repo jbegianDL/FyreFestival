@@ -33,7 +33,8 @@ public class ManageAttendeeList {
         if(usrInput.equals(adminPass)){
             System.out.println("Enter a number of what you'd like to do: \n" +
                     "1 - Search by ID Number \n " +
-                    "2 - Remove by ID Number");
+                    "2 - Remove by ID Number \n " +
+                    "3 - Set VIP Status");
             usrInput = input.nextLine();
             switch (usrInput){
                 case "1":
@@ -41,6 +42,9 @@ public class ManageAttendeeList {
                     break;
                 case "2":
                     removeByAccountNumber();
+                    break;
+                case "3":
+                    issueVipStatus();
                     break;
             }
         }else{
@@ -82,7 +86,26 @@ public class ManageAttendeeList {
                 System.out.println("Id is not found");
             }
         }
-            printNameAndID();
+        //prints list to see if attendee removed
+        printNameAndID();
+    }
+
+    public void issueVipStatus(){
+        printNameAndID();
+        System.out.println("Enter the ID Number you'd like to assign VIP status to: ");
+        int usrInput = input.nextInt();
+        for (int i = 0; i < attendeeList.size(); i++){
+            if(attendeeList.get(i).getIdNumber() == usrInput){
+                attendeeList.get(i).setVip(true);
+                break;
+            }else{
+                System.out.println("ID not found");
+            }
+        }
+
+        //prints array list to see if VIP status is set to true
+        System.out.println(attendeeList);
+
     }
 
 }
