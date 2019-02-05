@@ -17,7 +17,7 @@ public class ManageAttendeeList {
         String streetAddress = input.nextLine();
         System.out.println("Please enter your city: \n");
         String city = input.nextLine();
-        System.out.println("Please enter your state: \n");
+        System.out.println("Please enter your state: (Example: MI) \n");
         String state = input.nextLine();
         System.out.println("Please enter your email: \n");
         String email = input.nextLine();
@@ -39,7 +39,8 @@ public class ManageAttendeeList {
             System.out.println("Enter a number of what you'd like to do: \n" +
                     "1 - Search by ID Number \n " +
                     "2 - Remove by ID Number \n " +
-                    "3 - Set VIP Status");
+                    "3 - Set VIP Status \n" +
+                    "4 - Search by State");
             usrInput = input.nextLine();
             switch (usrInput){
                 case "1":
@@ -50,6 +51,9 @@ public class ManageAttendeeList {
                     break;
                 case "3":
                     issueVipStatus();
+                    break;
+                case "4":
+                    searchByState();
                     break;
             }
         }else{
@@ -111,6 +115,16 @@ public class ManageAttendeeList {
         //prints array list to see if VIP status is set to true
         System.out.println(attendeeList);
 
+    }
+
+    public void searchByState(){
+        System.out.println("What state would you like to search by: ");
+        String usrInput = input.nextLine();
+        for (int i = 0; i < attendeeList.size(); i++){
+            if(usrInput.equals(attendeeList.get(i).getState())){
+                System.out.println(attendeeList.get(i));
+            }
+        }
     }
 
 }
