@@ -5,16 +5,20 @@ import java.util.List;
 
 public class Attendee {
     private String name;
-    private String address;
+    private String streetAddress;
+    private String city;
+    private String state;
     private String email;
     private String plannedArrivalDate;
     private String specialRequests;
     private int idNumber;
     private boolean vip;
 
-    public Attendee(String name, String address, String email, String plannedArrivalDate, String specialRequests) {
+    public Attendee(String name, String streetAddress, String city, String state, String email, String plannedArrivalDate, String specialRequests) {
         this.name = name;
-        this.address = address;
+        this.streetAddress = streetAddress;
+        this.city = city;
+        this.state = state;
         this.email = email;
         this.plannedArrivalDate = plannedArrivalDate;
         this.specialRequests = specialRequests;
@@ -22,17 +26,18 @@ public class Attendee {
         this.vip = false;
     }
 
-
     @Override
     public String toString() {
         return "Attendee{" +
                 "name='" + name + '\'' +
-                ", address='" + address + '\'' +
+                ", streetAddress='" + streetAddress + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
                 ", email='" + email + '\'' +
                 ", plannedArrivalDate='" + plannedArrivalDate + '\'' +
                 ", specialRequests='" + specialRequests + '\'' +
+                ", idNumber=" + idNumber +
                 ", vip=" + vip +
-                ", idNumber = " + idNumber +
                 '}';
     }
 
@@ -44,12 +49,28 @@ public class Attendee {
         this.name = name;
     }
 
-    public String getAddress() {
-        return address;
+    public String getStreetAddress() {
+        return streetAddress;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setStreetAddress(String streetAddress) {
+        this.streetAddress = streetAddress;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
     }
 
     public String getEmail() {

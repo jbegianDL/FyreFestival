@@ -13,15 +13,20 @@ public class ManageAttendeeList {
     public void addAttendee(){
         System.out.println("Please enter name: \n");
         String name = input.nextLine();
-        System.out.println("Please enter your address: \n");
-        String address = input.nextLine();
+        System.out.println("Please enter your street address: \n");
+        String streetAddress = input.nextLine();
+        System.out.println("Please enter your city: \n");
+        String city = input.nextLine();
+        System.out.println("Please enter your state: \n");
+        String state = input.nextLine();
         System.out.println("Please enter your email: \n");
         String email = input.nextLine();
         System.out.println("Please enter your planned arrival date: (Example: MM/DD/YYYY) \n");
         String plannedArrivalDate = input.nextLine();
         System.out.println("Please enter any special requests: \n");
         String specialRequests = input.nextLine();
-        Attendee tempAttendee = new Attendee(name, address, email, plannedArrivalDate, specialRequests);
+
+        Attendee tempAttendee = new Attendee(name, streetAddress, city, state, email, plannedArrivalDate, specialRequests);
         tempAttendee.setIdNumber(attendeeID.incrementID());
         attendeeList.add(tempAttendee);
         System.out.println(attendeeList);
